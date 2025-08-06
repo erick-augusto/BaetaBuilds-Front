@@ -1,0 +1,43 @@
+<section class="container criar-pensamentos ff-inter">
+    <header class="header">
+        <h2>Cadastrar novo território:</h2>
+    </header>
+    <form>
+        <div>
+            <label for="nomeTorre">Nome da Torre:</label>
+            <input type="text" id="nomeTorre" name="nomeTorre" class="input" required>
+        </div>
+        <div>
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" class="input" required>
+        </div>
+        <div>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" class="input" required>
+        </div>
+        <div>
+            <label for="totalAptosTorre">Total de Aptos na Torre:</label>
+            <input type="number" id="totalAptosTorre" name="totalAptosTorre" class="input" required>
+        </div>
+        <div>
+            <label for="primAndIni">Primeiro Andar (Início):</label>
+            <input type="number" id="primAndIni" name="primAndIni" class="input" required>
+        </div>
+        <div>
+            <label for="primAndFim">Primeiro Andar (Fim):</label>
+            <input type="number" id="primAndFim" name="primAndFim" class="input" required>
+        </div>
+        <div>
+            <label for="ultAndIni">Último Andar (Início):</label>
+            <input type="number" id="ultAndIni" name="ultAndIni" class="input" required>
+        </div>
+        <div>
+            <label for="ultAndFim">Último Andar (Fim):</label>
+            <input type="number" id="ultAndFim" name="ultAndFim" class="input" required>
+        </div>
+        <div class="acoes">
+            <button (click)="cadastrarTeritorio()" class="botao">Cadastrar</button>
+            <button (click)="cancelar()" class="botao">Cancelar</button>
+        </div>
+    </form>
+</section>
