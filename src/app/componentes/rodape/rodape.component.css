@@ -1,17 +1,18 @@
 footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "TextoCopyright LogoRodape .";
+  background: #1565c0;
+  display: flex;
+  justify-content: center;
   align-items: center;
   padding: 1rem 2rem;
 }
 
 .TextoCopyright {
-  justify-self: center;
-  grid-area: TextoCopyright;
+  text-align: center;
+  width: 100%;
+  color: black;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  display: block;
 }
 
 .LogoRodape {

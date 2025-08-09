@@ -1,5 +1,6 @@
 .cabecalho {
   background-size: cover;
+  background: #1565c0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,14 +26,55 @@
   color: #6BD1FF;
 }
 
-.active{
-    border-bottom: 5px solid white;
-    color: white;
-    transition: 300ms ease-in;
+.navbar {
+    width: auto;
+    background: #1976d2;
+    padding: 5px 24px;
+    box-sizing: border-box;
+    margin: 0;
 }
 
-.logo.active {
-    padding-bottom: 13px;
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.navbar li {
+    margin: 0 24px;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 4px;
+}
+
+.navbar li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navbar li.active {
+    height: 100%;
+    padding: 0;
+}
+
+.navbar li.active a {
+    background: #1565c0;
+    color: #ffd600;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar li:hover a {
+    background: #1565c0;
+    color: #ffd600;
 }
 
 @media (max-width: 576px) {

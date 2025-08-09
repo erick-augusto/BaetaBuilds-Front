@@ -1,0 +1,29 @@
+.territorio-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+.territorio-row td {
+    border: 2px solid #1976d2;
+    border-radius: 16px;
+    padding: 16px;
+    background: #fff;
+    text-align: center;
+    vertical-align: middle;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+}
+.territorio-row td:hover {
+    background: #1976d2;
+    color: #fff;
+}
+.duas-colunas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.duas-colunas span {
+    flex: 1 1 50%;
+    text-align: center;
+}

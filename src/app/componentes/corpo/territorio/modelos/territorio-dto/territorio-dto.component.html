@@ -1,14 +1,9 @@
 <div class="ff-roboto-mono">
-    <table>
-        <tr>
-            <td>
+    <table class="territorio-table">
+        <tr class="territorio-row">
+            <td class="duas-colunas">
                 <span>Território {{territorioDTO.id}}</span>
-                <span> - </span>
-                <span>{{territorioDTO.dataInicio | date: 'dd/MM/yyyy'}}</span>
-                <span> - </span>
-                <span>{{territorioDTO.dataFim | date: 'dd/MM/yyyy'}}</span>
-                <span> - </span>
-                <span>{{territorioDTO.totalAptos}}</span>
+                <span>Total de Apartamentos: {{territorioDTO.totalAptos}}</span>
             </td>
         </tr>
     </table>
