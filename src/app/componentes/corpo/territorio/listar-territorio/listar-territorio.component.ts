@@ -6,6 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar-territorio.component.css']
 })
 export class ListarTerritorioComponent implements OnInit {
+  listaTerritorios = [
+    {
+      id: 2,
+      dataInicio: new Date(),
+      dataFim: new Date(),
+      totalAptos: 100
+    },
+    {
+      id: 3,
+      dataInicio: new Date(),
+      dataFim: new Date(),
+      totalAptos: 100
+    },
+    {
+      id: 4,
+      dataInicio: new Date(),
+      dataFim: new Date(),
+      totalAptos: 100
+    }
+  ];
 
   constructor() { }
 
