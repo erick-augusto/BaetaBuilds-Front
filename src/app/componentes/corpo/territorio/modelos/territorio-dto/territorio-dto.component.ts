@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TerritorioDTO } from '../territorioDTO';
 
 @Component({
   selector: 'app-territorio-dto',
@@ -7,8 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TerritorioDTOComponent implements OnInit {
 
-  @Input() territorioDTO = {
-    id: 1,
+  @Input() territorioDTO: TerritorioDTO = {
+    territorioID: 1,
     dataInicio: new Date(),
     dataFim: new Date(),
     totalAptos: 10
