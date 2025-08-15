@@ -1,0 +1,22 @@
+{
+    "territorioDTO": [
+        {
+            "territorioID": 2,
+            "dataInicio": "2024-01-01T00:00:00",
+            "dataFim": "2024-12-31T00:00:00",
+            "totalAptos": 100
+        },
+        {
+            "territorioID": 3,
+            "dataInicio": "2024-01-01T00:00:00",
+            "dataFim": "2024-12-31T00:00:00",
+            "totalAptos": 100
+        },
+        {
+            "territorioID": 4,
+            "dataInicio": "2024-01-01T00:00:00",
+            "dataFim": "2024-12-31T00:00:00",
+            "totalAptos": 100
+        }
+    ]
+}
