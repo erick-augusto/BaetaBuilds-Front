@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { CadastroDTO } from '../modelos/cadastroDTO';
+import { CadastrarTerritorioService } from './../services/cadastrar-territorio.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cadastrar-territorio',
@@ -7,13 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrarTerritorioComponent implements OnInit {
 
-  constructor() { }
+  @Input() cadastro: CadastroDTO = {
+    endereco: "",
+    cep: "",
+    totalAptosTorre: 0,
+    primAndIni: 0,
+    primAndFim: 0
+  }
+
+  constructor(private service: CadastrarTerritorioService) { }
 
   ngOnInit(): void {
   }
 
   cadastrarTeritorio() {
     // Lógica para cadastrar o território
+    this.service.cadastrarTerritorio(this.cadastro).subscribe();
     console.log('Território cadastrado!');
   }
 
