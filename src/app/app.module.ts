@@ -9,6 +9,8 @@ import { HomeComponent } from './componentes/corpo/home/home.component';
 import { CadastrarTerritorioComponent } from './componentes/corpo/territorio/cadastrar-territorio/cadastrar-territorio.component';
 import { ListarTerritorioComponent } from './componentes/corpo/territorio/listar-territorio/listar-territorio.component';
 import { TerritorioDTOComponent } from './componentes/corpo/territorio/modelos/territorio-dto/territorio-dto.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { TerritorioDTOComponent } from './componentes/corpo/territorio/modelos/t
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
