@@ -1,5 +1,5 @@
 .territorio-table {
-    width: 100%;
+    width: 97%;
     border-collapse: separate;
     border-spacing: 1px;
 }
@@ -7,15 +7,17 @@
     border: 2px solid #1976d2;
     border-radius: 16px;
     padding: 16px;
-    background: #fff;
+    background: #1976d2;
+    color: #fff;
     text-align: center;
     vertical-align: middle;
     transition: background 0.2s, color 0.2s;
     cursor: pointer;
 }
 .territorio-row td:hover {
-    background: #1976d2;
-    color: #fff;
+    border: 2px solid #154580;
+    background: #154580;
+    color: #ffd600;
 }
 .duas-colunas {
     display: flex;

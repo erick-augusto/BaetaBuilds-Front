@@ -27,10 +27,7 @@ h2 {
 }
 
 .container {
-  padding-right: 1rem;
-  padding-left: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -50,6 +47,41 @@ h2 {
 .botao:hover {
   border: 2px solid #84EEC1;
   color: #84EEC1;
+}
+
+.builds {
+  padding: 1rem 0;
+}
+
+.builds form {
+  background: #C4EDFF;
+  border: none;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  min-height: 55vh;
+}
+
+.builds form label {
+  color: #154580;
+  font-weight: bold;
+  margin: 0 1rem;
+}
+
+.builds form .input {
+  border: none;
+  height: 10px;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin: 0.5rem;
+}
+
+.sem-info {
+  text-align: center;
+  color: #154580;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 576px) {

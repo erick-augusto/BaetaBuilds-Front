@@ -1,40 +1,62 @@
-<section class="container criar-pensamentos ff-inter">
-    <header class="header">
-        <h2>Cadastrar novo território:</h2>
-    </header>
+<section class="container builds ff-inter">
     <form>
+        <header class="header">
+            <h2>Cadastrar novo território:</h2>
+        </header>
+        
+        <label for="nomeTorre">Nome da Torre:</label>
+        <input type="text" id="nomeTorre" name="nomeTorre" class="input" [(ngModel)]="cadastro.nomeTorre">
+    
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" class="input" [(ngModel)]="cadastro.endereco" required>
+
         <div>
-            <label for="nomeTorre">Nome da Torre:</label>
-            <input type="text" id="nomeTorre" name="nomeTorre" class="input" [(ngModel)]="cadastro.nomeTorre">
+            <table>
+                <tr>
+                    <td>
+                        <label for="cep">CEP:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="cep" name="cep" class="input" required>
+                    </td>
+                    <td>
+                        <label for="totalAptosTorre">Total de Aptos na Torre:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="totalAptosTorre" name="totalAptosTorre" class="input" [(ngModel)]="cadastro.totalAptosTorre" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="primAndIni">Primeiro Andar (Início):</label>
+                    </td>
+                    <td>
+                        <input type="number" id="primAndIni" name="primAndIni" class="input" [(ngModel)]="cadastro.primAndIni" required>
+                    </td>
+                    <td>
+                        <label for="primAndFim">Primeiro Andar (Fim):</label>
+                    </td>
+                    <td>
+                        <input type="number" id="primAndFim" name="primAndFim" class="input" [(ngModel)]="cadastro.primAndFim" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="ultAndIni">Último Andar (Início):</label>
+                    </td>
+                    <td>
+                        <input type="number" id="ultAndIni" name="ultAndIni" class="input" [(ngModel)]="cadastro.ultAndIni">
+                    </td>
+                    <td>
+                        <label for="ultAndFim">Último Andar (Fim):</label>
+                    </td>
+                    <td>
+                        <input type="number" id="ultAndFim" name="ultAndFim" class="input" [(ngModel)]="cadastro.ultAndFim">
+                    </td>
+                </tr>
+            </table>
         </div>
-        <div>
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" class="input" [(ngModel)]="cadastro.endereco" required>
-        </div>
-        <div>
-            <label for="cep">CEP:</label>
-            <input type="text" id="cep" name="cep" class="input" required>
-        </div>
-        <div>
-            <label for="totalAptosTorre">Total de Aptos na Torre:</label>
-            <input type="number" id="totalAptosTorre" name="totalAptosTorre" class="input" [(ngModel)]="cadastro.totalAptosTorre" required>
-        </div>
-        <div>
-            <label for="primAndIni">Primeiro Andar (Início):</label>
-            <input type="number" id="primAndIni" name="primAndIni" class="input" [(ngModel)]="cadastro.primAndIni" required>
-        </div>
-        <div>
-            <label for="primAndFim">Primeiro Andar (Fim):</label>
-            <input type="number" id="primAndFim" name="primAndFim" class="input" [(ngModel)]="cadastro.primAndFim" required>
-        </div>
-        <div>
-            <label for="ultAndIni">Último Andar (Início):</label>
-            <input type="number" id="ultAndIni" name="ultAndIni" class="input" [(ngModel)]="cadastro.ultAndIni">
-        </div>
-        <div>
-            <label for="ultAndFim">Último Andar (Fim):</label>
-            <input type="number" id="ultAndFim" name="ultAndFim" class="input" [(ngModel)]="cadastro.ultAndFim">
-        </div>
+        
         <div class="acoes">
             <button (click)="cadastrarTeritorio()" class="botao">Cadastrar</button>
             <button (click)="cancelar()" class="botao">Cancelar</button>

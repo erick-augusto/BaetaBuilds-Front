@@ -1,16 +1,19 @@
-<section class="container">
-    <header class="header d-flex">
-        <h2 class="ff-inter">Lista de Territórios de Prédios</h2>
-    </header>
-
-    <div class="mural" *ngIf="listaTerritorios.length > 0, else semTerritorios">
-        <div *ngFor="let t of listaTerritorios">
-            <app-territorio-dto [territorioDTO] = "t"></app-territorio-dto>
+<section class="container builds ff-inter">
+    <form>
+        <header class="header d-flex">
+            <h2 class="ff-inter">Lista de Territórios de Prédios</h2>
+        </header>
+    
+        <div class="mural" *ngIf="listaTerritorios.length > 0, else semTerritorios">
+            <div *ngFor="let t of listaTerritorios">
+                <app-territorio-dto [territorioDTO] = "t"></app-territorio-dto>
+            </div>
         </div>
-    </div>
+        
+        <ng-template #semTerritorios>
+            <div class="ff-inter sem-info">
+                <p>Nenhum território cadastrado!</p>
+          </div>
+        </ng-template>
+    </form>
 </section>
-<ng-template #semTerritorios>
-    <div class="ff-inter sem-pensamentos">
-        <p>Nenhum território cadastrado!</p>
-  </div>
-</ng-template>

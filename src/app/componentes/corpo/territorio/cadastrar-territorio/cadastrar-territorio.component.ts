@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CadastroDTO } from '../modelos/cadastroDTO';
 import { CadastrarTerritorioService } from './../services/cadastrar-territorio.service';
 import { Component, Input, OnInit } from '@angular/core';
@@ -17,20 +18,21 @@ export class CadastrarTerritorioComponent implements OnInit {
     primAndFim: 0
   }
 
-  constructor(private service: CadastrarTerritorioService) { }
+  constructor(private service: CadastrarTerritorioService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   cadastrarTeritorio() {
     // Lógica para cadastrar o território
-    this.service.cadastrarTerritorio(this.cadastro).subscribe();
-    console.log('Território cadastrado!');
+    this.service.cadastrarTerritorio(this.cadastro).subscribe(() => {
+      this.router.navigate(['/listarTerritorio'])
+    });
   }
 
   cancelar() {
     // Lógica para cancelar o cadastro
-    console.log('Cadastro cancelado!');
+    this.router.navigate(['/listarTerritorio']);
   }
   
 }
