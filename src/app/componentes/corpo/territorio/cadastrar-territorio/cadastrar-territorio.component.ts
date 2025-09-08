@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { CadastroDTO } from '../modelos/cadastroDTO';
 import { CadastrarTerritorioService } from './../services/cadastrar-territorio.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastrar-territorio',
@@ -10,22 +11,26 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CadastrarTerritorioComponent implements OnInit {
 
-  @Input() cadastro: CadastroDTO = {
-    endereco: "",
-    cep: "",
-    totalAptosTorre: 0,
-    primAndIni: 0,
-    primAndFim: 0
-  }
+  formulario!: FormGroup;
 
-  constructor(private service: CadastrarTerritorioService, private router: Router) { }
+  constructor(private service: CadastrarTerritorioService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.formulario = this.formBuilder.group({
+      endereco: [''],
+      cep: [''],
+      totalAptosTorre: [''],
+      primAndIni: [''],
+      primAndFim: [''],
+      nomeTorre: [''],
+      ultAndIni: [''],
+      ultAndFim: ['']
+    });
   }
 
   cadastrarTeritorio() {
     // Lógica para cadastrar o território
-    this.service.cadastrarTerritorio(this.cadastro).subscribe(() => {
+    this.service.cadastrarTerritorio(this.formulario.value).subscribe(() => {
       this.router.navigate(['/listarTerritorio'])
     });
   }

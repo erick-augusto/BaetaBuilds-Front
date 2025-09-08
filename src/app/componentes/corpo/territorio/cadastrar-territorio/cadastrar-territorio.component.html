@@ -1,14 +1,14 @@
 <section class="container builds ff-inter">
-    <form>
+    <form [formGroup]="formulario">
         <header class="header">
             <h2>Cadastrar novo território:</h2>
         </header>
         
         <label for="nomeTorre">Nome da Torre:</label>
-        <input type="text" id="nomeTorre" name="nomeTorre" class="input" [(ngModel)]="cadastro.nomeTorre">
+        <input type="text" id="nomeTorre" formControlName="nomeTorre" class="input">
     
         <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" name="endereco" class="input" [(ngModel)]="cadastro.endereco" required>
+        <input type="text" id="endereco" formControlName="endereco" class="input" required>
 
         <div>
             <table>
@@ -17,13 +17,13 @@
                         <label for="cep">CEP:</label>
                     </td>
                     <td>
-                        <input type="text" id="cep" name="cep" class="input" required>
+                        <input type="text" id="cep" formControlName="cep" class="input" required>
                     </td>
                     <td>
                         <label for="totalAptosTorre">Total de Aptos na Torre:</label>
                     </td>
                     <td>
-                        <input type="number" id="totalAptosTorre" name="totalAptosTorre" class="input" [(ngModel)]="cadastro.totalAptosTorre" required>
+                        <input type="number" id="totalAptosTorre" formControlName="totalAptosTorre" class="input" required>
                     </td>
                 </tr>
                 <tr>
@@ -31,13 +31,13 @@
                         <label for="primAndIni">Primeiro Andar (Início):</label>
                     </td>
                     <td>
-                        <input type="number" id="primAndIni" name="primAndIni" class="input" [(ngModel)]="cadastro.primAndIni" required>
+                        <input type="number" id="primAndIni" formControlName="primAndIni" class="input" required>
                     </td>
                     <td>
                         <label for="primAndFim">Primeiro Andar (Fim):</label>
                     </td>
                     <td>
-                        <input type="number" id="primAndFim" name="primAndFim" class="input" [(ngModel)]="cadastro.primAndFim" required>
+                        <input type="number" id="primAndFim" formControlName="primAndFim" class="input" required>
                     </td>
                 </tr>
                 <tr>
@@ -45,13 +45,13 @@
                         <label for="ultAndIni">Último Andar (Início):</label>
                     </td>
                     <td>
-                        <input type="number" id="ultAndIni" name="ultAndIni" class="input" [(ngModel)]="cadastro.ultAndIni">
+                        <input type="number" id="ultAndIni" formControlName="ultAndIni" class="input">
                     </td>
                     <td>
                         <label for="ultAndFim">Último Andar (Fim):</label>
                     </td>
                     <td>
-                        <input type="number" id="ultAndFim" name="ultAndFim" class="input" [(ngModel)]="cadastro.ultAndFim">
+                        <input type="number" id="ultAndFim" formControlName="ultAndFim" class="input">
                     </td>
                 </tr>
             </table>
