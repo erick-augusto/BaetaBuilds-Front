@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { CadastroDTO } from '../modelos/cadastroDTO';
 import { CadastrarTerritorioService } from './../services/cadastrar-territorio.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastrar-territorio',
@@ -17,27 +17,39 @@ export class CadastrarTerritorioComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
-      endereco: [''],
-      cep: [''],
-      totalAptosTorre: [''],
-      primAndIni: [''],
-      primAndFim: [''],
+      endereco: ['', Validators.compose([Validators.required, Validators.pattern(/(.|\s)*\S(.|\s)*/)])],
+      cep: ['', Validators.compose([Validators.required, Validators.pattern(/^\d{5}-\d{3}$/)])],
+      totalAptosTorre: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
+      primAndIni: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
+      primAndFim: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
       nomeTorre: [''],
-      ultAndIni: [''],
-      ultAndFim: ['']
+      ultAndIni: ['', Validators.pattern(/^\d+$/)],
+      ultAndFim: ['', Validators.pattern(/^\d+$/)]
     });
   }
 
   cadastrarTeritorio() {
     // Lógica para cadastrar o território
-    this.service.cadastrarTerritorio(this.formulario.value).subscribe(() => {
-      this.router.navigate(['/listarTerritorio'])
-    });
+    console.log(this.formulario.errors);
+    console.log(this.formulario.get('cep')?.errors);
+    if(this.formulario.valid) {
+      this.service.cadastrarTerritorio(this.formulario.value).subscribe(() => {
+        this.router.navigate(['/listarTerritorio'])
+      });
+    }
   }
 
   cancelar() {
     // Lógica para cancelar o cadastro
     this.router.navigate(['/listarTerritorio']);
+  }
+
+  habilitarBotao(): string {
+    if(this.formulario.valid) {
+      return 'botao';
+    } else {
+      return 'botao__desabilitado';
+    }
   }
   
 }

@@ -10,3 +10,17 @@
   margin-top: 70px;
   width: 200px;
 }
+
+.botao__desabilitado {
+  margin: 5px;
+  margin-top: 70px;
+  width: 200px;
+}
+
+.mensagem__erro {
+  font-size: 12px;
+  margin-left: 5px;
+  color: red;
+  margin-top: -5px;
+  margin-bottom: 20px;
+}

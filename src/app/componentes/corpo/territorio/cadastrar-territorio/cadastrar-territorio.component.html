@@ -6,9 +6,12 @@
         
         <label for="nomeTorre">Nome da Torre:</label>
         <input type="text" id="nomeTorre" formControlName="nomeTorre" class="input">
-    
+        
         <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" formControlName="endereco" class="input" required>
+        <input type="text" id="endereco" formControlName="endereco" class="input">
+        <div class="mensagem__erro" *ngIf="formulario.get('endereco')?.invalid && formulario.get('endereco')?.touched">
+            Endereço é obrigatório.
+        </div>
 
         <div>
             <table>
@@ -17,13 +20,19 @@
                         <label for="cep">CEP:</label>
                     </td>
                     <td>
-                        <input type="text" id="cep" formControlName="cep" class="input" required>
+                        <input type="text" id="cep" formControlName="cep" class="input">
+                        <div class="mensagem__erro" *ngIf="formulario.get('cep')?.invalid && formulario.get('cep')?.touched">
+                            CEP é obrigatório.
+                        </div>
                     </td>
                     <td>
                         <label for="totalAptosTorre">Total de Aptos na Torre:</label>
                     </td>
                     <td>
-                        <input type="number" id="totalAptosTorre" formControlName="totalAptosTorre" class="input" required>
+                        <input type="number" id="totalAptosTorre" formControlName="totalAptosTorre" class="input">
+                        <div class="mensagem__erro" *ngIf="formulario.get('totalAptosTorre')?.invalid && formulario.get('totalAptosTorre')?.touched">
+                            Total de Aptos é obrigatório.
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -31,13 +40,19 @@
                         <label for="primAndIni">Primeiro Andar (Início):</label>
                     </td>
                     <td>
-                        <input type="number" id="primAndIni" formControlName="primAndIni" class="input" required>
+                        <input type="number" id="primAndIni" formControlName="primAndIni" class="input">
+                        <div class="mensagem__erro" *ngIf="formulario.get('primAndIni')?.invalid && formulario.get('primAndIni')?.touched">
+                            Primeiro Andar (Início) é obrigatório.
+                        </div>
                     </td>
                     <td>
                         <label for="primAndFim">Primeiro Andar (Fim):</label>
                     </td>
                     <td>
-                        <input type="number" id="primAndFim" formControlName="primAndFim" class="input" required>
+                        <input type="number" id="primAndFim" formControlName="primAndFim" class="input">
+                        <div class="mensagem__erro" *ngIf="formulario.get('primAndFim')?.invalid && formulario.get('primAndFim')?.touched">
+                            Primeiro Andar (Fim) é obrigatório.
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -58,7 +73,7 @@
         </div>
         
         <div class="acoes">
-            <button (click)="cadastrarTeritorio()" class="botao">Cadastrar</button>
+            <button [disabled]="!formulario.valid" (click)="cadastrarTeritorio()" [ngClass]="habilitarBotao()">Cadastrar</button>
             <button (click)="cancelar()" class="botao">Cancelar</button>
         </div>
     </form>
