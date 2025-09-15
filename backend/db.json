@@ -31,5 +31,20 @@
       "ultAndIni": 111,
       "ultAndFim": 114
     }
+  ],
+  "enviarEntradaDTO": [
+    {
+      "id": 1,
+      "nome": "João Silva",
+      "totalAptos": 1
+    }
+  ],
+  "enviarSaidaDTO": [
+    {
+      "id": 1,
+      "enderecoTorre": "Rua Principal, 100",
+      "cep": "111111-111",
+      "numApto": "10"
+    }
   ]
 }
