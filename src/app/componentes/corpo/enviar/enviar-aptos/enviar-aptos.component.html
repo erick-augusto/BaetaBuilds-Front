@@ -1,0 +1,57 @@
+<section class="container builds ff-inter">
+    <form [formGroup]="formulario">
+        <header class="header">
+            <h2>Enviar Apartamentos Aleatórios</h2>
+        </header>
+
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <label for="nome">Nome do Responsável:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="nome" formControlName="nome" class="input">
+                        <div class="mensagem__erro" *ngIf="formulario.get('nome')?.invalid && formulario.get('nome')?.touched">
+                            Nome é obrigatório.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="totalAptos">Total de Apartamentos:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="totalAptos" formControlName="totalAptos" class="input">
+                        <div class="mensagem__erro" *ngIf="formulario.get('totalAptos')?.invalid && formulario.get('totalAptos')?.touched">
+                            Total de Apartamentos é obrigatório.
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="aptosRetornados" class="aptos-retornados" *ngIf="filtrado">
+            <label style="text-align: center">Apartamentos selecionados:</label>
+            
+            <div *ngIf="saida && saida.length > 0; else nenhumAptoRetornado">
+                <ul>
+                    <li *ngFor="let apto of saida">
+                        Endereço: {{ apto.enderecoTorre }}
+                        CEP: {{ apto.cep }}
+                        Apartamento {{ apto.numApto }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ng-template #nenhumAptoRetornado>
+            <div class="ff-inter sem-info">
+                <p>Nenhum apartamento foi retornado!</p>
+          </div>
+        </ng-template>
+
+        <div class="acoes">
+            <button [disabled]="!formulario.valid" (click)="enviarAptosAleatorios()" [ngClass]="habilitarBotao()">Buscar Apartamentos</button>
+        </div>
+    </form>
+</section>
