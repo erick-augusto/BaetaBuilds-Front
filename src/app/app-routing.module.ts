@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './componentes/corpo/home/home.component';
 import { CadastrarTerritorioComponent } from './componentes/corpo/territorio/cadastrar-territorio/cadastrar-territorio.component';
 import { ListarTerritorioComponent } from './componentes/corpo/territorio/listar-territorio/listar-territorio.component';
+import { EnviarAptosComponent } from './componentes/corpo/enviar/enviar-aptos/enviar-aptos.component';
 
 const routes: Routes = [
   {
@@ -21,7 +22,11 @@ const routes: Routes = [
   {
     path: 'cadastrarTerritorio',
     component: CadastrarTerritorioComponent
-  }  
+  },
+  {
+    path: 'enviarAptos',
+    component: EnviarAptosComponent
+  }
 ];
 
 @NgModule({
