@@ -51,7 +51,8 @@
         </ng-template>
 
         <div class="acoes">
-            <button [disabled]="!formulario.valid" (click)="enviarAptosAleatorios()" [ngClass]="habilitarBotao()">Buscar Apartamentos</button>
+            <button [disabled]="!formulario.valid" (click)="enviarAptosAleatorios()" [ngClass]="habilitarBotao()" *ngIf="!filtrado">Buscar Apartamentos</button>
+            <button (click)="novoEnvio()" class="botao" *ngIf="filtrado">Novo Envio</button>
         </div>
     </form>
 </section>

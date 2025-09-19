@@ -18,6 +18,10 @@ export class EnviarAptosComponent implements OnInit {
   constructor(private service: EnviarAptosService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.montarFormulario();
+  }
+
+  montarFormulario() {
     this.formulario = this.formBuilder.group({
       nome: ['', Validators.compose([Validators.required, Validators.pattern(/(.|\s)*\S(.|\s)*/)])],
       totalAptos: ['', [Validators.required, Validators.pattern(/^\d+$/)]]
@@ -30,14 +34,8 @@ export class EnviarAptosComponent implements OnInit {
   enviarAptosAleatorios() {
     if(this.formulario.valid) {
       this.service.enviarAptosAleatorios(this.formulario.value).subscribe((resposta) => {
-        //resposta é do tipo EnviarSaidaDTO
-        console.log("retorno do serviço:");
-        console.log(resposta); // ou faça o que quiser com o objeto
         this.saida = resposta;
-        console.log("saida:");
-        console.log(this.saida);
         this.filtrado = true;
-        //this.router.navigate(['/aptosAleatorios']);
       });
     }
   }
@@ -48,5 +46,10 @@ export class EnviarAptosComponent implements OnInit {
     } else {
       return 'botao__desabilitado';
     }
+  }
+
+  novoEnvio(){
+    this.filtrado= false;
+    this.montarFormulario();
   }
 }
