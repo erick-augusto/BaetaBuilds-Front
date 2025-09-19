@@ -45,6 +45,12 @@
       "enderecoTorre": "Rua Principal, 100",
       "cep": "111111-111",
       "numApto": "10"
+    },
+    {
+      "id": 2,
+      "enderecoTorre": "Rua Principal, 100",
+      "cep": "111111-111",
+      "numApto": "20"
     }
   ]
 }

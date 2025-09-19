@@ -31,10 +31,13 @@ export class EnviarAptosComponent implements OnInit {
     if(this.formulario.valid) {
       this.service.enviarAptosAleatorios(this.formulario.value).subscribe((resposta) => {
         //resposta é do tipo EnviarSaidaDTO
+        console.log("retorno do serviço:");
         console.log(resposta); // ou faça o que quiser com o objeto
-        this.saida.push(resposta);
+        this.saida = resposta;
+        console.log("saida:");
+        console.log(this.saida);
         this.filtrado = true;
-        this.router.navigate(['/aptosAleatorios']);
+        //this.router.navigate(['/aptosAleatorios']);
       });
     }
   }
@@ -46,5 +49,4 @@ export class EnviarAptosComponent implements OnInit {
       return 'botao__desabilitado';
     }
   }
-
 }

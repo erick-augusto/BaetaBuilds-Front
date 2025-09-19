@@ -34,7 +34,7 @@
         <div id="aptosRetornados" class="aptos-retornados" *ngIf="filtrado">
             <label style="text-align: center">Apartamentos selecionados:</label>
             
-            <div *ngIf="saida && saida.length > 0; else nenhumAptoRetornado">
+            <div *ngIf="saida.length > 0; else nenhumAptoRetornado">
                 <ul>
                     <li *ngFor="let apto of saida">
                         Endereço: {{ apto.enderecoTorre }}
