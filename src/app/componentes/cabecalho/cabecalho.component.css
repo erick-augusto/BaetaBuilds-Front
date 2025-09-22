@@ -27,6 +27,10 @@
 }
 
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
     width: auto;
     background: #1976d2;
     padding: 5px 24px;
@@ -35,6 +39,8 @@
 }
 
 .navbar ul {
+    gap: 20px;
+
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -77,6 +83,15 @@
     color: #ffd600;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
 @media (max-width: 576px) {
   .cabecalho .logo {
     padding: 2rem;
@@ -92,5 +107,27 @@
   }
   .cabecalho .imagem {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none; /* esconde menu */
+    flex-direction: column;
+    gap: 10px;
+    background: #004aad;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+  }
+
+  .navbar ul.aberto {
+    display: flex; /* mostra quando clicado */
+  }
+
+  .menu-toggle {
+    display: block; /* mostra o botão hamburguer */
   }
 }

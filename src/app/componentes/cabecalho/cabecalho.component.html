@@ -5,19 +5,15 @@
 </header>
 <div>
     <nav class="navbar container full-width">
-        <ul>
-            <li routerLink="/home" routerLinkActive="active">
-                <a>Home</a>
-            </li>
-            <li routerLink="/listarTerritorio" routerLinkActive="active">
-                <a>Territórios</a>
-            </li>
-            <li routerLink="/cadastrarTerritorio" routerLinkActive="active">
-                <a>Cadastrar</a>
-            </li>
-            <li routerLink="/enviarAptos" routerLinkActive="active">
-                <a>Enviar Aptos</a>
-            </li>
+         <!-- Botão hamburguer -->
+        <button class="menu-toggle" (click)="menuAberto = !menuAberto">☰</button>
+
+        <!-- Menu -->
+        <ul [class.aberto]="menuAberto">
+        <li routerLink="/home" routerLinkActive="active" (click)="menuAberto = false"><a>Home</a></li>
+        <li routerLink="/listarTerritorio" routerLinkActive="active" (click)="menuAberto = false"><a>Territórios</a></li>
+        <li routerLink="/cadastrarTerritorio" routerLinkActive="active" (click)="menuAberto = false"><a>Cadastrar</a></li>
+        <li routerLink="/enviarAptos" routerLinkActive="active" (click)="menuAberto = false"><a>Enviar Aptos</a></li>
         </ul>
     </nav>
 </div>

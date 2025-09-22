@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabecalhoComponent implements OnInit {
 
+  menuAberto = false;
+
   constructor() { }
 
   ngOnInit(): void {
