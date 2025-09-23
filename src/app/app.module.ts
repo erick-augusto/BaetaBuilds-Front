@@ -12,6 +12,7 @@ import { TerritorioDTOComponent } from './componentes/corpo/territorio/modelos/t
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EnviarAptosComponent } from './componentes/corpo/enviar/enviar-aptos/enviar-aptos.component';
+import { EstatisticasComponent } from './componentes/corpo/estatisticas/estatisticas.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EnviarAptosComponent } from './componentes/corpo/enviar/enviar-aptos/en
     CadastrarTerritorioComponent,
     ListarTerritorioComponent,
     TerritorioDTOComponent,
-    EnviarAptosComponent
+    EnviarAptosComponent,
+    EstatisticasComponent
   ],
   imports: [
     BrowserModule,
