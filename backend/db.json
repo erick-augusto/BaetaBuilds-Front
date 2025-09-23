@@ -52,5 +52,14 @@
       "cep": "111111-111",
       "numApto": "20"
     }
-  ]
+  ],
+  "estatisticasDTO":
+  {
+    "totalAptosFeitos": 100,
+    "totalAptosNaoFeitos": 500,
+    "totalTerritoriosFeitos": 5,
+    "totalTerritoriosNaoFeitos": 15,
+    "totalDias": 200,
+    "mediaAptosPorDia": 0.5
+  }
 }
