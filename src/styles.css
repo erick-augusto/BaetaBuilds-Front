@@ -26,6 +26,11 @@ h2 {
   margin: 1rem auto 2rem;
 }
 
+.input {
+  width: 100%;       /* ocupa toda a largura da célula */
+  box-sizing: border-box; /* inclui padding/borda dentro da largura total */
+}
+
 .container {
   padding: 1rem;
   margin-right: auto;
