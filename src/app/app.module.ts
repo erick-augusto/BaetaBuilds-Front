@@ -13,6 +13,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EnviarAptosComponent } from './componentes/corpo/enviar/enviar-aptos/enviar-aptos.component';
 import { EstatisticasComponent } from './componentes/corpo/estatisticas/estatisticas.component';
+import { HistoricoComponent } from './componentes/corpo/historico/historico.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EstatisticasComponent } from './componentes/corpo/estatisticas/estatist
     ListarTerritorioComponent,
     TerritorioDTOComponent,
     EnviarAptosComponent,
-    EstatisticasComponent
+    EstatisticasComponent,
+    HistoricoComponent
   ],
   imports: [
     BrowserModule,

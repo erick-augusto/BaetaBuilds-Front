@@ -1,3 +1,4 @@
+import { HistoricoComponent } from './componentes/corpo/historico/historico.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './componentes/corpo/home/home.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'estatisticas',
     component: EstatisticasComponent
+  },
+  {
+    path: 'historico',
+    component: HistoricoComponent
   }
 ];
 
