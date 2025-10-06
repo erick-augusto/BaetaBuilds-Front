@@ -55,6 +55,7 @@
   ],
   "estatisticasDTO":
   {
+    "id": 1,
     "totalAptosFeitos": 100,
     "totalAptosNaoFeitos": 500,
     "totalTerritoriosFeitos": 5,

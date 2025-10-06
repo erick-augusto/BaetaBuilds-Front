@@ -10,13 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EstatisticasComponent implements OnInit {
 
-  estatisticas!: EstatisticasDTO;
+  estatisticas: EstatisticasDTO | null = null;
 
   constructor(private service: EstatisticasService) { }
 
   ngOnInit(): void {
     this.service.gerarEstatisticas().subscribe((resposta) => {
+      console.log(resposta);
       this.estatisticas = resposta;
+      console.log(this.estatisticas);
     });
   }
 
