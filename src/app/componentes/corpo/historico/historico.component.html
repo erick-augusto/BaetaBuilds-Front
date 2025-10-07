@@ -4,18 +4,31 @@
             <h2>Histórico do fechamento do território de Prédios</h2>
         </header>
 
-        <div class="mural">
+        <div class="mural" *ngIf="historico && historico.id != null, else semDados">
             <div class="ff-roboto-mono">
                 <table class="territorio-table">
                     <tr class="territorio-row">
                         <td class="duas-colunas"><span>Total de Apartamentos feitos: {{historico.numAptosFeitos}}</span></td>
+                    </tr>
+                    <tr class="territorio-row">
                         <td class="duas-colunas"><span>Total de Apartamentos: {{historico.totAptos}}</span></td>
+                    </tr>
+                    <tr class="territorio-row">
                         <td class="duas-colunas"><span>Data de início: {{historico.dataIni}}</span></td>
+                    </tr>
+                    <tr class="territorio-row">
                         <td class="duas-colunas"><span>Data de término: {{historico.dataFim}}</span></td>
+                    </tr>
+                    <tr class="territorio-row">
                         <td class="duas-colunas"><span>Total de dias: {{historico.totDias}}</span></td>
                     </tr>
                 </table>
             </div>
         </div>
+        <ng-template #semDados>
+            <div class="ff-inter sem-info">
+                <p>Nenhum dado disponível!</p>
+          </div>
+        </ng-template>
     </form>
 </section>

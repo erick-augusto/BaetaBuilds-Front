@@ -9,7 +9,7 @@ import { HistoricoService } from '../territorio/services/historico.service';
 })
 export class HistoricoComponent implements OnInit {
 
-  historico!: HistoricoDTO;
+  historico: HistoricoDTO | null = null;
 
   constructor(private service: HistoricoService) { }
 
