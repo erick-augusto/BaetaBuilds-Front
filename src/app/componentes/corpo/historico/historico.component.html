@@ -5,22 +5,32 @@
         </header>
 
         <div class="mural" *ngIf="historico && historico.id != null, else semDados">
-            <div class="ff-roboto-mono">
+            <div>
                 <table class="dados-table">
                     <tr class="territorio-row">
-                        <td class="duas-colunas"><span>Total de Apartamentos feitos: {{historico.numAptosFeitos}}</span></td>
+                        <td class="duas-colunas">
+                            <span><label>Total de Apartamentos feitos:</label> {{historico.numAptosFeitos}}</span>
+                        </td>
                     </tr>
                     <tr class="territorio-row">
-                        <td class="duas-colunas"><span>Total de Apartamentos: {{historico.totAptos}}</span></td>
+                        <td class="duas-colunas">
+                            <span><label>Total de Apartamentos:</label> {{historico.totAptos}}</span>
+                        </td>
                     </tr>
                     <tr class="territorio-row">
-                        <td class="duas-colunas"><span>Data de início: {{historico.dataIni}}</span></td>
+                        <td class="duas-colunas">
+                            <span><label>Data de início:</label> {{historico.dataIni | date:'dd/MM/yyyy'}}</span>
+                        </td>
                     </tr>
                     <tr class="territorio-row">
-                        <td class="duas-colunas"><span>Data de término: {{historico.dataFim}}</span></td>
+                        <td class="duas-colunas">
+                            <span><label>Data de término:</label> {{historico.dataFim | date:'dd/MM/yyyy'}}</span>
+                        </td>
                     </tr>
                     <tr class="territorio-row">
-                        <td class="duas-colunas"><span>Total de dias: {{historico.totDias}}</span></td>
+                        <td class="duas-colunas">
+                            <span><label>Total de dias:</label> {{historico.totDias}}</span>
+                        </td>
                     </tr>
                 </table>
             </div>
