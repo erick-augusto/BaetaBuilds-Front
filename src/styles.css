@@ -102,6 +102,11 @@ h2 {
   font-size: 1.5rem;
 }
 
+.dados-table {
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
 @media (min-width: 576px) {
   .container {
       width: 540px;
