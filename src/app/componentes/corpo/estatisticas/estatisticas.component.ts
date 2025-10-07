@@ -16,9 +16,7 @@ export class EstatisticasComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.gerarEstatisticas().subscribe((resposta) => {
-      console.log(resposta);
       this.estatisticas = resposta;
-      console.log(this.estatisticas);
     });
   }
 
