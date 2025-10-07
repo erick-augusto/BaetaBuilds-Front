@@ -5,25 +5,37 @@
         </header>
 
         <div class="mural" *ngIf="estatisticas && estatisticas.id != null, else semDados">
-            <div class="ff-roboto-mono">
+            <div>
                 <table class="territorio-table">
                     <tr class="territorio-row">
-                        <td class="duas-colunas"><span>Total de Apartamentos feitos: {{estatisticas.totalAptosFeitos}}</span></td>
+                        <td class="duas-colunas">
+                            <span><label>Total de Apartamentos feitos:</label> {{estatisticas.totalAptosFeitos}}</span>
+                        </td>
                     </tr>
                     <tr class="territorio-row">
-                        <td class="duas-colunas"><span>Total de Apartamentos não feitos: {{estatisticas.totalAptosNaoFeitos}}</span></td>
+                        <td class="duas-colunas">
+                            <span><label>Total de Apartamentos não feitos:</label> {{estatisticas.totalAptosNaoFeitos}}</span>
+                        </td>
                     </tr>
                     <tr class="territorio-row">
-                        <td class="duas-colunas"><span>Total de Territórios feitos: {{estatisticas.totalTerritoriosFeitos}}</span></td>
+                        <td class="duas-colunas">
+                            <span><label>Total de Territórios feitos:</label> {{estatisticas.totalTerritoriosFeitos}}</span>
+                        </td>
                     </tr>
                     <tr class="territorio-row">
-                        <td class="duas-colunas"><span>Total de Territórios não feitos: {{estatisticas.totalTerritoriosNaoFeitos}}</span></td>
+                        <td class="duas-colunas">
+                            <span><label>Total de Territórios não feitos:</label> {{estatisticas.totalTerritoriosNaoFeitos}}</span>
+                        </td>
                     </tr>
                     <tr class="territorio-row">
-                        <td class="duas-colunas"><span>Total de dias: {{estatisticas.totalDias}}</span></td>
+                        <td class="duas-colunas">
+                            <span><label>Total de dias:</label> {{estatisticas.totalDias}}</span>
+                        </td>
                     </tr>
                     <tr class="territorio-row">
-                        <td class="duas-colunas"><span>Apartamentos por dia: {{estatisticas.mediaAptosPorDia}}</span></td>
+                        <td class="duas-colunas">
+                            <span><label>Apartamentos por dia:</label> {{estatisticas.mediaAptosPorDia}}</span>
+                        </td>
                     </tr>
                 </table>
             </div>
