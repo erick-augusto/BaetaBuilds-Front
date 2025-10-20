@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EnviarAptosComponent } from './componentes/corpo/enviar/enviar-aptos/enviar-aptos.component';
 import { EstatisticasComponent } from './componentes/corpo/estatisticas/estatisticas.component';
 import { HistoricoComponent } from './componentes/corpo/historico/historico.component';
+import { ResetarComponent } from './componentes/corpo/resetar/resetar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HistoricoComponent } from './componentes/corpo/historico/historico.comp
     TerritorioDTOComponent,
     EnviarAptosComponent,
     EstatisticasComponent,
-    HistoricoComponent
+    HistoricoComponent,
+    ResetarComponent
   ],
   imports: [
     BrowserModule,
