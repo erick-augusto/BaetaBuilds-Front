@@ -1,11 +1,12 @@
 import { HistoricoComponent } from './componentes/corpo/historico/historico.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './componentes/corpo/home/home.component';
 import { CadastrarTerritorioComponent } from './componentes/corpo/territorio/cadastrar-territorio/cadastrar-territorio.component';
 import { ListarTerritorioComponent } from './componentes/corpo/territorio/listar-territorio/listar-territorio.component';
 import { EnviarAptosComponent } from './componentes/corpo/enviar/enviar-aptos/enviar-aptos.component';
 import { EstatisticasComponent } from './componentes/corpo/estatisticas/estatisticas.component';
+import { ResetarComponent } from './componentes/corpo/resetar/resetar.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'historico',
     component: HistoricoComponent
+  },
+  {
+    path: 'resetar',
+    component: ResetarComponent
   }
 ];
 
