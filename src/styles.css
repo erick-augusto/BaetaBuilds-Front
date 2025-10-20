@@ -107,6 +107,13 @@ h2 {
     font-size: 1.5rem;
 }
 
+.alerta {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 @media (min-width: 576px) {
   .container {
       width: 540px;
