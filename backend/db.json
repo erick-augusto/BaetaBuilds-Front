@@ -53,8 +53,7 @@
       "numApto": "20"
     }
   ],
-  "estatisticasDTO":
-  {
+  "estatisticasDTO": {
     "id": 1,
     "totalAptosFeitos": 100,
     "totalAptosNaoFeitos": 500,
@@ -63,13 +62,13 @@
     "totalDias": 200,
     "mediaAptosPorDia": 0.5
   },
-  "historicoDTO":
-  {
+  "historicoDTO": {
     "id": 1,
     "numAptosFeitos": "50",
     "totAptos": "100",
     "dataIni": "2024-01-01T00:00:00",
     "dataFim": "2024-12-31T00:00:00",
     "totDias": "10"
-  }
+  },
+  "resetarDTO": {}
 }
