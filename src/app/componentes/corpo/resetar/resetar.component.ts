@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResetarComponent implements OnInit {
 
+  reset = '';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -14,5 +16,14 @@ export class ResetarComponent implements OnInit {
 
   resetar(){
     console.log("Resetar território de apartamentos");
+    this.reset = 'Todos os territórios foram resetados com sucesso!';
+  }
+
+  habilitarBotao(): string {
+    if(this.reset == '') {
+      return 'botao';
+    } else {
+      return 'botao__desabilitado';
+    }
   }
 }
