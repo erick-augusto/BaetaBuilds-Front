@@ -1,3 +1,4 @@
+import { ResetarService } from './../territorio/services/resetar.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,14 +10,21 @@ export class ResetarComponent implements OnInit {
 
   reset = '';
 
-  constructor() { }
+  constructor(private service: ResetarService) { }
 
   ngOnInit(): void {
   }
 
   resetar(){
     console.log("Resetar território de apartamentos");
-    this.reset = 'Todos os territórios foram resetados com sucesso!';
+    this.service.resetarTerritorio().subscribe(retorno =>{
+      console.log(retorno);
+      if(retorno){
+        this.reset = 'Todos os territórios foram resetados com sucesso!';
+      } else {
+        this.reset = 'Não foi possível fazer o reset dos territórios.';
+      }
+    });
   }
 
   habilitarBotao(): string {
