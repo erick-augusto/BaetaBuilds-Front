@@ -15,6 +15,7 @@ import { EnviarAptosComponent } from './componentes/corpo/enviar/enviar-aptos/en
 import { EstatisticasComponent } from './componentes/corpo/estatisticas/estatisticas.component';
 import { HistoricoComponent } from './componentes/corpo/historico/historico.component';
 import { ResetarComponent } from './componentes/corpo/resetar/resetar.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ResetarComponent } from './componentes/corpo/resetar/resetar.component'
     EnviarAptosComponent,
     EstatisticasComponent,
     HistoricoComponent,
-    ResetarComponent
+    ResetarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
