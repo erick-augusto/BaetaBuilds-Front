@@ -7,6 +7,7 @@ import { ListarTerritorioComponent } from './componentes/corpo/territorio/listar
 import { EnviarAptosComponent } from './componentes/corpo/enviar/enviar-aptos/enviar-aptos.component';
 import { EstatisticasComponent } from './componentes/corpo/estatisticas/estatisticas.component';
 import { ResetarComponent } from './componentes/corpo/resetar/resetar.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'resetar',
     component: ResetarComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 
