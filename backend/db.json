@@ -70,5 +70,10 @@
     "dataFim": "2024-12-31T00:00:00",
     "totDias": "10"
   },
-  "resetarDTO": {}
+  "resetarDTO": {
+
+  },
+  "loginDTO": {
+    "token": "abc123xyz"
+  }
 }
