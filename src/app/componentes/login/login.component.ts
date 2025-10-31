@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../corpo/territorio/services/login.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +9,19 @@ import { LoginService } from '../corpo/territorio/services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private service: LoginService) { }
+  formulario!: FormGroup;
+
+  constructor(private service: LoginService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.formulario = this.formBuilder.group({
+      login: [''],
+      senha: ['']
+    });
   }
 
   login(){
+    console.log(this.formulario.value);
     this.service.login().subscribe(retorno =>{
       console.log(retorno);
     });

@@ -1,5 +1,5 @@
 <section class="container builds ff-inter">
-  <form class="login-form" autocomplete="off">
+  <form [formGroup]="formulario" class="login-form" autocomplete="off">
     <header class="header d-flex">
       <h2>Login</h2>
     </header>
@@ -9,16 +9,16 @@
 
       <div class="form-row">
         <label for="usuario">Usuário</label>
-        <input id="usuario" name="usuario" type="text" class="input" placeholder="seu.usuario" />
+        <input id="usuario" name="usuario" type="text" class="input" formControlName="login" placeholder="seu.usuario" />
       </div>
 
       <div class="form-row">
         <label for="senha">Senha</label>
-        <input id="senha" name="senha" type="password" class="input" placeholder="••••••••" />
+        <input id="senha" name="senha" type="password" class="input" formControlName="senha" placeholder="••••••••" />
       </div>
 
       <div class="form-actions">
-        <button type="submit" class="botao btn-primary">Entrar</button>
+        <button type="button" (click)="login()" class="botao btn-primary">Entrar</button>
         <button type="button" class="botao btn-ghost">Cancelar</button>
       </div>
 
