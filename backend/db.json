@@ -70,10 +70,13 @@
     "dataFim": "2024-12-31T00:00:00",
     "totDias": "10"
   },
-  "resetarDTO": {
-
+  "resetarDTO": {},
+  "autenticacaoDTO": {
+    "login": "erick",
+    "senha": "123"
   },
-  "loginDTO": {
-    "token": "abc123xyz"
+  "tokenDTO": {
+    "id": 1,
+    "login": "abc123xyz"
   }
 }

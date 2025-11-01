@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../corpo/territorio/services/login.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { TokenDTO } from '../corpo/territorio/modelos/TokenDTO';
 
 @Component({
   selector: 'app-login',
@@ -22,8 +23,8 @@ export class LoginComponent implements OnInit {
 
   login(){
     console.log(this.formulario.value);
-    this.service.login().subscribe(retorno =>{
-      console.log(retorno);
+    this.service.login(this.formulario.value).subscribe((token: TokenDTO) =>{
+      console.log('Token recebido:', token);
     });
   }
 
