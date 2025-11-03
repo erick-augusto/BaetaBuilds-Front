@@ -25,6 +25,12 @@ export class LoginComponent implements OnInit {
     console.log(this.formulario.value);
     this.service.login(this.formulario.value).subscribe((token: TokenDTO) =>{
       console.log('Token recebido:', token);
+      if(token && token.token){
+        localStorage.setItem('token', token.token);
+        console.log('Token armazenado com sucesso!');
+      } else {
+        console.error('Token inválido recebido');
+      }
     });
   }
 

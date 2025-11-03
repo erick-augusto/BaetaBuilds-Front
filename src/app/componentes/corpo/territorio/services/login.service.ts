@@ -14,6 +14,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   login(autenticacao: AutenticacaoDTO): Observable<TokenDTO> {
-    return this.http.post<TokenDTO>(this.API, autenticacao);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<TokenDTO>(this.API, autenticacao, { headers });
   }
 }
