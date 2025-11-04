@@ -11,6 +11,7 @@ import { TokenDTO } from '../corpo/territorio/modelos/TokenDTO';
 export class LoginComponent implements OnInit {
 
   formulario!: FormGroup;
+  showResetModal = false;
 
   constructor(private service: LoginService, private formBuilder: FormBuilder) { }
 
@@ -32,6 +33,14 @@ export class LoginComponent implements OnInit {
         console.error('Token inválido recebido');
       }
     });
+  }
+
+  openResetModal(): void {
+    this.showResetModal = true;
+  }
+
+  closeResetModal(): void {
+    this.showResetModal = false;
   }
 
 }
