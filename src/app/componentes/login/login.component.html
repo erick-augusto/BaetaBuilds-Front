@@ -23,8 +23,30 @@
       </div>
 
       <div class="login-help">
-        <a class="link" href="#">Esqueci minha senha</a>
+        <a class="link" href="#" (click)="openResetModal(); $event.preventDefault()">Esqueci minha senha</a>
       </div>
     </div>
   </form>
 </section>
+
+<!-- modal de redefinição -->
+<div class="modal-backdrop" *ngIf="showResetModal" (click)="closeResetModal()">
+  <div class="modal" role="dialog" aria-modal="true" (click)="$event.stopPropagation()">
+    <header class="modal-header">
+      <h3>Redefinir senha</h3>
+    </header>
+
+    <div class="modal-body">
+      <p>Informe seu e‑mail ou nome de usuário para receber instruções de recuperação.</p>
+      <form>
+        <label for="resetLogin">Usuário / E-mail</label>
+        <input id="resetLogin" formControlName="loginOrEmail" class="input" type="text" />
+        <div class="modal-actions">
+          <button type="submit" class="botao btn-primary">Enviar</button>
+          <button type="button" class="botao btn-ghost" (click)="closeResetModal()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
