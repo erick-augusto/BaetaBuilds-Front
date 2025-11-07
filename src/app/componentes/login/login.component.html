@@ -30,20 +30,20 @@
 </section>
 
 <!-- modal de redefinição -->
-<div class="modal-backdrop" *ngIf="showResetModal" (click)="closeResetModal()">
+<div class="modal-backdrop ff-inter" *ngIf="showResetModal" (click)="closeResetModal()">
   <div class="modal" role="dialog" aria-modal="true" (click)="$event.stopPropagation()">
     <header class="modal-header">
       <h3>Redefinir senha</h3>
     </header>
-
+    <hr class="modal-divider">
     <div class="modal-body">
-      <p>Informe seu e‑mail ou nome de usuário para receber instruções de recuperação.</p>
       <form>
-        <label for="resetLogin">Usuário / E-mail</label>
-        <input id="resetLogin" formControlName="loginOrEmail" class="input" type="text" />
+        <label>Informações de recuperação de senha</label>
+        <br/>
+        <p>A senha não pode ser recuperada de forma automática.</p>
+        <p>Para recuperar sua senha, entre em contato com o administrador do sistema.</p>
         <div class="modal-actions">
-          <button type="submit" class="botao btn-primary">Enviar</button>
-          <button type="button" class="botao btn-ghost" (click)="closeResetModal()">Cancelar</button>
+          <button type="button" class="botao btn-primary" (click)="closeResetModal()">OK</button>
         </div>
       </form>
     </div>

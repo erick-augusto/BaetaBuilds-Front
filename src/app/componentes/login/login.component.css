@@ -122,33 +122,44 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5rem;
+  color: #154580;
+}
+
+.modal-body {
+  padding: 0 1rem 1rem;
 }
 
 .modal-body p {
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 1rem 0;
   color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 .modal-body label {
   display: block;
   margin-bottom: 0.25rem;
+  margin-top: 0.5rem;
   font-weight: 600;
-}
-
-.modal-body .input {
-  width: 100%;
-  padding: 0.6rem 0.85rem;
-  margin-bottom: 0.75rem;
-  border-radius: 8px;
-  border: 1px solid rgba(15,23,42,0.08);
-  background: #f8fafc;
-  box-sizing: border-box;
+  color: #0f172a;
 }
 
 .modal-actions {
   display: flex;
   gap: 0.75rem;
   justify-content: flex-end;
+}
+
+/* separador que preenche toda a largura do modal, incluindo o padding */
+.modal-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(15,23,42,0.08);
+  margin: 0;
+  /* Compensa o padding horizontal do .modal para preencher até as bordas internas */
+  width: calc(100% + 2.5rem);   /* 2 * padding (ex.: 1.25rem) */
+  margin-left: -1.25rem;       /* -padding */
+  margin-right: -1.25rem;      /* -padding */
 }
 
 /* Responsive */
