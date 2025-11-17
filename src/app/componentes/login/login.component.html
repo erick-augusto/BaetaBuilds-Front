@@ -10,11 +10,17 @@
       <div class="form-row">
         <label for="usuario">Usuário</label>
         <input id="usuario" name="usuario" type="text" class="input" formControlName="login" placeholder="seu.usuario" />
+        <div class="mensagem__erro" *ngIf="formulario.get('login')?.invalid && formulario.get('login')?.touched">
+          Usuário é obrigatório.
+        </div>
       </div>
 
       <div class="form-row">
         <label for="senha">Senha</label>
         <input id="senha" name="senha" type="password" class="input" formControlName="senha" placeholder="••••••••" />
+        <div class="mensagem__erro" *ngIf="formulario.get('senha')?.invalid && formulario.get('senha')?.touched">
+          Senha é obrigatória.
+        </div>
       </div>
 
       <div class="form-actions">
