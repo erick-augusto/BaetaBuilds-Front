@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../corpo/territorio/services/login.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TokenDTO } from '../corpo/territorio/modelos/TokenDTO';
 import { Router } from '@angular/router';
 
@@ -18,24 +18,26 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
-      login: [''],
-      senha: ['']
+      login: ['',Validators.required],
+      senha: ['',Validators.required]
     });
   }
 
   login(){
     console.log(this.formulario.value);
-    this.service.login(this.formulario.value).subscribe((token: TokenDTO) =>{
-      console.log('Token recebido:', token);
-      token.token = 'abc123xyz';
-      if(token && token.token){
-        localStorage.setItem('token', token.token);
-        console.log('Token armazenado com sucesso!');
-        this.router.navigate(['/home'])
-      } else {
-        console.error('Token inválido recebido');
-      }
-    });
+    if(this.formulario.valid) {
+      this.service.login(this.formulario.value).subscribe((token: TokenDTO) =>{
+        console.log('Token recebido:', token);
+        token.token = 'abc123xyz';
+        if(token && token.token){
+          localStorage.setItem('token', token.token);
+          console.log('Token armazenado com sucesso!');
+          this.router.navigate(['/home'])
+        } else {
+          console.error('Token inválido recebido');
+        }
+      });
+    }
   }
 
   openResetModal(): void {
