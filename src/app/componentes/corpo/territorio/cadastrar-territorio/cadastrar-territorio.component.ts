@@ -32,6 +32,7 @@ export class CadastrarTerritorioComponent implements OnInit {
     // Lógica para cadastrar o território
     console.log(this.formulario.errors);
     console.log(this.formulario.get('cep')?.errors);
+    console.log('Formulário válido:', this.formulario.valid);
     if(this.formulario.valid) {
       this.service.cadastrarTerritorio(this.formulario.value).subscribe(() => {
         this.router.navigate(['/listarTerritorio'])

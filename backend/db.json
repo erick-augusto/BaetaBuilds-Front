@@ -30,6 +30,17 @@
       "primAndFim": 14,
       "ultAndIni": 111,
       "ultAndFim": 114
+    },
+    {
+      "endereco": "Rua Nova",
+      "cep": "11111-111",
+      "totalAptosTorre": 10,
+      "primAndIni": 1,
+      "primAndFim": 10,
+      "nomeTorre": "",
+      "ultAndIni": "",
+      "ultAndFim": "",
+      "id": 2
     }
   ],
   "enviarEntradaDTO": [
