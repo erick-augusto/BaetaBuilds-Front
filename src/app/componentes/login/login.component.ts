@@ -3,6 +3,7 @@ import { LoginService } from '../corpo/territorio/services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TokenDTO } from '../corpo/territorio/modelos/TokenDTO';
 import { Router } from '@angular/router';
+import { AuthService } from '../corpo/territorio/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   formulario!: FormGroup;
   showResetModal = false;
 
-  constructor(private service: LoginService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private auth: AuthService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login(){
+  /*login(){
     console.log(this.formulario.value);
     if(this.formulario.valid) {
       this.service.login(this.formulario.value).subscribe((token: TokenDTO) =>{
@@ -36,6 +37,15 @@ export class LoginComponent implements OnInit {
         } else {
           console.error('Token inválido recebido');
         }
+      });
+    }
+  }*/
+
+  login(){
+    if(this.formulario.valid) {
+      this.auth.login(this.formulario.value).subscribe({
+        next: () => this.router.navigate(['/home']),
+        error: () => { console.error('Token inválido recebido'); }
       });
     }
   }
