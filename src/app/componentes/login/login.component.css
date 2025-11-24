@@ -28,6 +28,23 @@
   font-size: 0.95rem;
 }
 
+/* ...existing code... */
+.login-image{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:1rem;
+}
+
+/* controla tamanho e responsividade da imagem */
+.login-image img{
+  width:100%;
+  max-width:320px; /* tamanho máximo em telas maiores */
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
 /* Form rows: label + input on same line, input fills remaining space */
 .form-row {
   display: flex;
@@ -179,4 +196,8 @@
     margin-bottom: 0.25rem;
   }
   .login-card { padding: 1.25rem; }
+
+  .login-image img{
+    max-width:220px;
+  }
 }
