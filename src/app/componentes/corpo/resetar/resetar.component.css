@@ -10,3 +10,10 @@
   margin-top: 170px;
   width: 200px;
 }
+
+.botao__desabilitado {
+  margin: 5px;
+  margin-top: 175px;
+  width: 200px;
+  cursor: not-allowed;
+}
