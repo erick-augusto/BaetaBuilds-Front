@@ -50,6 +50,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  cancelar(){
+    this.formulario.reset();
+  }
+
   openResetModal(): void {
     this.showResetModal = true;
   }
