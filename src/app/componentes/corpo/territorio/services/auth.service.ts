@@ -9,10 +9,15 @@ import { LoginService } from './login.service';
 })
 export class AuthService {
 
-  private loggedIn$ = new BehaviorSubject<boolean>(!!localStorage.getItem('token'));
+  private loggedIn$ = new BehaviorSubject<boolean>(false);
   readonly isLoggedIn$ = this.loggedIn$.asObservable();
 
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService) {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.loggedIn$.next(true);
+    }
+  }
 
   login(cred: AutenticacaoDTO): Observable<TokenDTO> {
     return this.loginService.login(cred).pipe(
