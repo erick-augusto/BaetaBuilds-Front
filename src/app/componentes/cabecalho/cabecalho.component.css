@@ -1,27 +1,27 @@
 .cabecalho {
   background-size: cover;
-  background: #1565c0;
+  background: #154580;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.cabecalho .logo {
-  width: 46%;
-  padding: 2rem 3rem;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* espaço entre imagem e texto */
 }
 
-.cabecalho .logo img {
-  width: 90%;
-  max-width: 350px;
-  margin-bottom: 2rem;
+.logo img {
+  width: 100px; /* ajuste conforme necessário */
+  height: 100px;
+  object-fit: contain;
+  background: transparent;
+  image-rendering: crisp-edges;
 }
 
-.cabecalho .imagem{
-  width: 40%;
-}
-
-.cabecalho p {
+.logo p {
+  margin: 0;
   font-size: 2rem;
   color: #6BD1FF;
 }
