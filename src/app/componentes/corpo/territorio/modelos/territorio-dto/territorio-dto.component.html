@@ -1,10 +1,47 @@
 <div class="ff-roboto-mono">
     <table class="territorio-table">
-        <tr class="territorio-row">
+        <tr class="territorio-row" (click)="toggleExpanded()" style="cursor: pointer;">
             <td class="duas-colunas">
                 <span>Território {{territorioDTO.territorioID}}</span>
                 <span>Total de Apartamentos: {{territorioDTO.totalAptos}}</span>
             </td>
         </tr>
     </table>
+
+    <!-- Lista de Apartamentos expandida -->
+    <div *ngIf="expanded" class="apartamentos-container">
+        <div *ngIf="carregando" class="carregando">
+            <p>Carregando apartamentos...</p>
+        </div>
+
+        <div *ngIf="erro" class="erro">
+            <p>{{ erro }}</p>
+        </div>
+
+        <div *ngIf="!carregando && !erro && apartamentos.length > 0" class="apartamentos-list">
+            <div class="apartamentos-header">
+                <h4>Apartamentos do Território {{ territorioDTO.territorioID }}</h4>
+            </div>
+            <table class="apartamentos-table">
+                <thead>
+                    <tr>
+                        <th>Endereço</th>
+                        <th>CEP</th>
+                        <th>Número do Apto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let apto of apartamentos" class="apto-row">
+                        <td>{{ apto.enderecoTorre }}</td>
+                        <td>{{ apto.cep }}</td>
+                        <td>{{ apto.numApto }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div *ngIf="!carregando && !erro && apartamentos.length === 0" class="sem-apartamentos">
+            <p>Nenhum apartamento encontrado para este território.</p>
+        </div>
+    </div>
 </div>
