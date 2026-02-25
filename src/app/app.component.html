@@ -1,7 +1,11 @@
-<app-login *ngIf="(isLoggedIn$ | async) === false"></app-login>
+<ng-container *ngIf="(isLoggedIn$ | async) === false">
+  <app-login></app-login>
+</ng-container>
 
-<app-cabecalho *ngIf="isLoggedIn$ | async"></app-cabecalho>
-<main *ngIf="isLoggedIn$ | async">
+<ng-container *ngIf="isLoggedIn$ | async">
+  <app-cabecalho></app-cabecalho>
+  <main>
     <router-outlet></router-outlet>
-</main>
-<app-rodape *ngIf="isLoggedIn$ | async"></app-rodape>
+  </main>
+  <app-rodape></app-rodape>
+</ng-container>
