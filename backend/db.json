@@ -83,11 +83,61 @@
   },
   "resetarDTO": {},
   "autenticacaoDTO": {
-    "login": "erick",
-    "senha": "123"
+    "login": "erick.augusto",
+    "senha": "1234"
   },
   "tokenDTO": {
     "id": 1,
     "login": "abc123xyz"
+  },
+  "torreApartamentosDTO": [
+  {
+    "torreID": 1,
+    "nomeTorre": "Torre A",
+    "endereco": "Rua das Flores, 100",
+    "cep": "12345-678",
+    "totalAptosTorre": 3,
+    "apartamentos": [
+      {
+        "aptoID": 1,
+        "numApto": 101,
+        "dataEntrega": "2024-03-15",
+        "nomeResponsavel": "João Silva"
+      },
+      {
+        "aptoID": 2,
+        "numApto": 102,
+        "dataEntrega": null,
+        "nomeResponsavel": null
+      },
+      {
+        "aptoID": 3,
+        "numApto": 103,
+        "dataEntrega": "2024-05-20",
+        "nomeResponsavel": "Maria Souza"
+      }
+    ]
+  },
+  {
+    "torreID": 2,
+    "nomeTorre": "Torre B",
+    "endereco": "Rua das Flores, 200",
+    "cep": "12345-678",
+    "totalAptosTorre": 2,
+    "apartamentos": [
+      {
+        "aptoID": 4,
+        "numApto": 201,
+        "dataEntrega": null,
+        "nomeResponsavel": null
+      },
+      {
+        "aptoID": 5,
+        "numApto": 202,
+        "dataEntrega": "2024-07-10",
+        "nomeResponsavel": "Carlos Pereira"
+      }
+    ]
   }
+]
 }
