@@ -8,7 +8,7 @@
         </tr>
     </table>
 
-    <!-- Lista de Apartamentos expandida -->
+    <!-- Lista de Torres e Apartamentos expandida -->
     <div *ngIf="expanded" class="apartamentos-container">
         <div *ngIf="carregando" class="carregando">
             <p>Carregando apartamentos...</p>
@@ -18,29 +18,24 @@
             <p>{{ erro }}</p>
         </div>
 
-        <div *ngIf="!carregando && !erro && apartamentos.length > 0" class="apartamentos-list">
-            <div class="apartamentos-header">
-                <h4>Apartamentos do Território {{ territorioDTO.territorioID }}</h4>
+        <div *ngIf="!carregando && !erro && torres.length > 0">
+            <div *ngFor="let torre of torres" class="torre-section">
+                <div class="torre-header">
+                    <h4>{{ torre.nomeTorre }}</h4>
+                    <span>{{ torre.endereco }} — CEP: {{ torre.cep }} </span>
+                    <span>Total de Aptos: {{ torre.totalAptosTorre }}</span>
+                </div>
+                <table class="apartamentos-table">
+                    <tbody>
+                        <tr *ngFor="let apto of torre.apartamentos" class="apto-row">
+                            <td>Nº Apto: {{ apto.numApto }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <table class="apartamentos-table">
-                <thead>
-                    <tr>
-                        <th>Endereço</th>
-                        <th>CEP</th>
-                        <th>Número do Apto</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let apto of apartamentos" class="apto-row">
-                        <td>{{ apto.enderecoTorre }}</td>
-                        <td>{{ apto.cep }}</td>
-                        <td>{{ apto.numApto }}</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
 
-        <div *ngIf="!carregando && !erro && apartamentos.length === 0" class="sem-apartamentos">
+        <div *ngIf="!carregando && !erro && torres.length === 0" class="sem-apartamentos">
             <p>Nenhum apartamento encontrado para este território.</p>
         </div>
     </div>

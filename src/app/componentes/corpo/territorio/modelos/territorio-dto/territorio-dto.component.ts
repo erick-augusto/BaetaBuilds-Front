@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TerritorioDTO } from '../territorioDTO';
-import { EnviarSaidaDTO } from '../enviarSaidaDTO';
+import { TorreApartamentosDTO } from '../torreApartamentosDTO';
 import { ListarApartamentosService } from '../../services/listar-apartamentos.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class TerritorioDTOComponent implements OnInit {
   }
 
   expanded: boolean = false;
-  apartamentos: EnviarSaidaDTO[] = [];
+  torres: TorreApartamentosDTO[] = [];
   carregando: boolean = false;
   erro: string = '';
 
@@ -30,7 +30,7 @@ export class TerritorioDTOComponent implements OnInit {
   toggleExpanded(): void {
     this.expanded = !this.expanded;
     
-    if (this.expanded && this.apartamentos.length === 0) {
+    if (this.expanded && this.torres.length === 0) {
       this.carregarApartamentos();
     }
   }
@@ -42,7 +42,7 @@ export class TerritorioDTOComponent implements OnInit {
     this.listarApartamentosService.listarApartamentosPorTerritorio(this.territorioDTO.territorioID)
       .subscribe({
         next: (dados) => {
-          this.apartamentos = dados;
+          this.torres = dados;
           this.carregando = false;
         },
         error: (erro) => {
